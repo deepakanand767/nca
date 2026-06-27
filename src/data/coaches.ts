@@ -11,11 +11,11 @@ export interface Coach {
 
 export const coaches: Coach[] = [
   {
-    name: "Rajinder Singh",
+    name: "Prince",
     role: "Head Coach & Founder",
     experience: "20+ years",
     specialty: "Batting & Game Strategy",
-    initials: "RS",
+    initials: "P",
     from: "brand.600",
     to: "brand.800",
   },
