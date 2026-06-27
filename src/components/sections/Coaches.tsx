@@ -6,7 +6,6 @@ import {
   Flex,
   HStack,
   Icon,
-  SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -26,9 +25,9 @@ export function Coaches() {
           subtitle="Our coaching staff brings decades of combined experience, blending technical expertise with the patience and passion to bring out the best in every player."
         />
 
-        <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} gap={{ base: 6, md: 6 }} mt={{ base: 12, md: 16 }}>
+        <Flex wrap="wrap" justify="center" gap={6} mt={{ base: 12, md: 16 }}>
           {coaches.map((coach, i) => (
-            <Reveal key={coach.name} delay={i * 0.1} h="full">
+            <Reveal key={coach.name} delay={i * 0.1} h="full" w={{ base: "full", sm: "300px" }}>
               <Stack
                 h="full"
                 gap={0}
@@ -103,7 +102,7 @@ export function Coaches() {
               </Stack>
             </Reveal>
           ))}
-        </SimpleGrid>
+        </Flex>
       </Container>
     </Box>
   );
