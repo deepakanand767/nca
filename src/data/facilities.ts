@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import { GiCricketBat, GiBowlingPin, GiGymBag, GiStopwatch } from "react-icons/gi";
+import { GiCricketBat, GiGymBag, GiStopwatch } from "react-icons/gi";
 import { FaVideo, FaUsers } from "react-icons/fa6";
 
 export interface Facility {
@@ -14,12 +14,6 @@ export const facilities: Facility[] = [
     description:
       "Multiple practice nets with turf and matting wickets that replicate real match conditions all year round.",
     icon: GiCricketBat,
-  },
-  {
-    title: "Bowling Machines",
-    description:
-      "Programmable bowling machines for pace, spin and swing — repeat any delivery until you master it.",
-    icon: GiBowlingPin,
   },
   {
     title: "Floodlit Ground",
