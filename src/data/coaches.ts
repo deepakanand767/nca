@@ -12,7 +12,7 @@ export interface Coach {
 export const coaches: Coach[] = [
   {
     name: "Prince",
-    role: "Head Coach & Founder",
+    role: "Certified Head Coach & Founder",
     experience: "20+ years",
     specialty: "Batting & Game Strategy",
     initials: "P",
