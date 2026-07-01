@@ -15,11 +15,12 @@ export const siteConfig = {
   // TODO: replace contact details with the real ones.
   email: "info@nangalcricketacademy.com",
   phoneDisplay: "+91 79733 76623",
-  address: "Nangal, Rupnagar, Punjab 140124, India",
+  address:
+    "Captain Amol Kalia Park (near Laal Tanki), Nangal, Rupnagar, Punjab 140124, India",
   hours: "Mon – Sat: 6:00 AM – 9:00 AM & 4:00 PM – 8:00 PM",
-  // Google Maps embed URL for Nangal (swap with your exact ground location).
+  // Google Maps embed centered on the ground with a labeled "NCA" marker.
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Nangal,+Punjab,+India&output=embed",
+    "https://maps.google.com/maps?q=31.3731,76.3764(NCA+-+Nangal+Cricket+Academy)&z=16&output=embed",
   socials: {
     instagram: "https://instagram.com/",
     facebook: "https://facebook.com/",
