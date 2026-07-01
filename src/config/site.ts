@@ -28,13 +28,13 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Programs", href: "#programs" },
-  { label: "Coaches", href: "#coaches" },
-  { label: "Facilities", href: "#facilities" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Programs", href: "/#programs" },
+  { label: "Coaches", href: "/#coaches" },
+  { label: "Facilities", href: "/#facilities" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 /** Build a wa.me deep link with an optional pre-filled message. */

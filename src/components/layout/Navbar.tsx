@@ -17,7 +17,7 @@ import { GiCricketBat } from "react-icons/gi";
 import { FaBars, FaWhatsapp, FaXmark } from "react-icons/fa6";
 import { buildWhatsAppLink, navLinks, siteConfig } from "@/config/site";
 
-export function Navbar() {
+export function Navbar({ forceSolid = false }: { forceSolid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -28,7 +28,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const solid = scrolled || open;
+  const solid = forceSolid || scrolled || open;
   const linkColor = solid ? "gray.700" : "whiteAlpha.900";
 
   return (
@@ -46,7 +46,7 @@ export function Navbar() {
       <Container maxW="7xl" px={{ base: 4, md: 6 }}>
         <Flex h={{ base: "64px", md: "76px" }} align="center" justify="space-between">
           {/* Logo */}
-          <Link href="#home" _hover={{ textDecoration: "none" }} onClick={() => setOpen(false)}>
+          <Link href="/" _hover={{ textDecoration: "none" }} onClick={() => setOpen(false)}>
             <HStack gap={3}>
               <Flex
                 w="44px"
