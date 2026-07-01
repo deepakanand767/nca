@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Icon, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, Icon, Image, Text } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaXmark, FaExpand } from "react-icons/fa6";
 import { Reveal } from "@/components/common/Reveal";
@@ -39,7 +39,7 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
 
   return (
     <>
-      <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} gap={{ base: 3, md: 4 }}>
+      <Box className="masonry">
         {images.map((img, i) => (
           <Reveal key={img.src} delay={(i % 4) * 0.06}>
             <Box
@@ -48,7 +48,6 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
               onClick={() => setIndex(i)}
               position="relative"
               cursor="pointer"
-              h={{ base: "150px", sm: "190px", md: "230px" }}
               rounded="xl"
               overflow="hidden"
               boxShadow="0 8px 24px rgba(0,0,0,0.08)"
@@ -56,7 +55,7 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
               _hover={{
                 transform: "translateY(-4px)",
                 boxShadow: "0 18px 36px rgba(27,94,32,0.22)",
-                "& img": { transform: "scale(1.08)" },
+                "& img": { transform: "scale(1.05)" },
                 "& .zoom": { opacity: 1 },
               }}
             >
@@ -64,8 +63,7 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
                 src={img.src}
                 alt={img.alt}
                 w="full"
-                h="full"
-                objectFit="cover"
+                display="block"
                 loading="lazy"
                 transition="transform 0.4s ease"
               />
@@ -93,7 +91,7 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
             </Box>
           </Reveal>
         ))}
-      </SimpleGrid>
+      </Box>
 
       {/* Lightbox overlay */}
       {isOpen && (

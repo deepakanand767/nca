@@ -53,3 +53,23 @@ body {
     transition: none !important;
   }
 }
+
+/* Masonry gallery — keeps each photo's natural aspect ratio so faces are never cropped */
+.masonry {
+  column-count: 2;
+  column-gap: 16px;
+}
+@media (min-width: 768px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+@media (min-width: 1024px) {
+  .masonry {
+    column-count: 4;
+  }
+}
+.masonry > * {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}

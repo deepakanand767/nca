@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Image, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { Reveal } from "@/components/common/Reveal";
@@ -22,13 +22,12 @@ export function Gallery() {
           </Text>
         ) : (
           <>
-            <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} gap={{ base: 3, md: 4 }} mt={{ base: 12, md: 16 }}>
+            <Box className="masonry" mt={{ base: 12, md: 16 }}>
               {featured.map((img, i) => (
                 <Reveal key={img.src} delay={(i % 4) * 0.08}>
                   <NextLink href="/gallery" style={{ display: "block" }}>
                     <Box
                       position="relative"
-                      h={{ base: "150px", md: "210px" }}
                       rounded="xl"
                       overflow="hidden"
                       boxShadow="0 8px 24px rgba(0,0,0,0.08)"
@@ -36,15 +35,14 @@ export function Gallery() {
                       _hover={{
                         transform: "translateY(-4px)",
                         boxShadow: "0 18px 36px rgba(27,94,32,0.22)",
-                        "& img": { transform: "scale(1.08)" },
+                        "& img": { transform: "scale(1.05)" },
                       }}
                     >
                       <Image
                         src={img.src}
                         alt={img.alt}
                         w="full"
-                        h="full"
-                        objectFit="cover"
+                        display="block"
                         loading="lazy"
                         transition="transform 0.4s ease"
                       />
@@ -52,14 +50,14 @@ export function Gallery() {
                         position="absolute"
                         inset="0"
                         bgGradient="to-t"
-                        gradientFrom="blackAlpha.500"
+                        gradientFrom="blackAlpha.400"
                         gradientTo="transparent"
                       />
                     </Box>
                   </NextLink>
                 </Reveal>
               ))}
-            </SimpleGrid>
+            </Box>
 
             <Flex justify="center" mt={{ base: 8, md: 12 }}>
               <Button
